@@ -1,0 +1,148 @@
+<style type="text/css">
+<!--
+p {
+	text-decoration: none;
+	}
+a:link {
+	text-decoration: none;
+	font-weight: bold;
+	color: #636363;
+	}
+a:visited {
+	text-decoration: none;
+	font-weight: bold;
+	color: #636363;
+	}
+a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+	}
+a:active {
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+	}
+
+body {
+	scrollbar-3dlight-color: #ffffff;
+	scrollbar-arrow-color: #636363;
+	scrollbar-base-color: #ffffff;
+	scrollbar-darkshadow-color: #ffffff;
+	scrollbar-face-color: #ffffff;
+	scrollbar-highlight-color: #636363;
+	scrollbar-shadow-color: #636363;
+	scrollbar-track-color: #ffffff;
+	
+	font-family: Verdana, Tahoma, Arial, Helvetica, Sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	
+	margin: 3%;
+	
+	background-color: #ffffff;
+	}
+
+p.center {
+	text-align: center;
+	}
+
+p.title {
+	font-weight: bold;
+	font-size: 9pt;
+	}
+
+p.location {
+	text-align: left;
+	font-size: 7pt;
+	background-color: #efefef;
+	padding: 2px;
+	}
+
+table {
+	font-size: 8pt;
+	text-align: center;
+
+	border-style: double;
+	border-width: 3px;
+	border-color: #c3c3c3;
+	}
+
+table.noborder {
+	border-width: 0px;
+	}
+
+td {
+	background-color: #efefef;
+	padding: 5px;
+	}
+
+td.actioncell {
+	background-color: #ffffff;
+	width: 60px;
+	}
+
+div.contents {
+	border-style: double;
+	border-width: 3px;
+	border-color: #c3c3c3;
+
+	text-align: center;
+
+	padding: 5px;
+	}
+
+div.menu {
+	text-align: center;
+	
+	border-width: 0px;
+	border-bottom-width: 5px;
+	border-style: double;
+	border-color: #c3c3c3;
+	}
+
+div.darkBox {
+	background-color: #efefef;
+	}
+
+input, textarea {
+	background-color: transparent;
+	border-style: double;
+	border-width: 3px;
+	border-color: #c3c3c3;
+	
+	font-family: Verdana, Tahoma, Arial, Helvetica, Sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	}
+
+select {
+	background-color: transparent;
+	border-style: double;
+	border-width: 3px;
+	border-color: #c3c3c3;
+	
+	font-family: Verdana, Tahoma, Arial, Helvetica, Sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	}
+
+input.radio {
+	border-width: 0px;
+	color: #000000;
+	}
+
+.important {
+	color: #ff0000;
+	}
+
+img {
+	border-width: 0px;
+	}
+
+.leftalign {
+	text-align: left;
+	}
+
+-->
+</style>

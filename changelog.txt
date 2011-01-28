@@ -1,0 +1,133 @@
+
+Enthusiast - Changelog
+======================
+
+28 January 2011 - 2.1.9
+- Change of license to GPLv3.
+- Update of config file samples to use .sample.php in order to prevent
+  accidental overwriting.
+
+05 November 2006 - 2.1.8
+- Tightened login security
+- Added some spam form checking during member addition
+- Cleaned inputs in forms
+- Incorporated optional passwords
+- Removed "email to me" when a database error occurs (unfortunately I have no
+  time to address these, please go to the Enthusiast support forum at CodeGrrl)
+
+19 May 2003
+- Made Enth XHTML 1.0 Transitional-friendly (credit to Danielle of
+  http://hoshichan.com for get_newest_members.php fix)
+- Added listheader.inc.php and listfooter.inc.php optional files
+- Fixed bug that deletes additional fields when member attempts to edit info
+
+10 March 2003
+- Added feature that allows sorting options be displayed as a
+  drop-down menu in the members list page
+- Added feature that shows what subset of the members list the user is
+  currently viewing on the members list page (i.e., Showing Country: Abc...)
+- Added feature that allows admin to approve multiple pending members
+  with one click
+- Fixed bug where the reset password page shows the email's contents on
+  the confirmation page
+- Added feature that allows you to change the folder name of the backend
+  directory
+
+29 December 2003
+- Added feature to add affiliates (image links or text links) to the listing
+  via the script
+- Added "remember me" function to remember logged in sessions and minimize
+  repeated logging in
+- Added function to turn off 'country' field for use in cliques
+- Added feature to customize the display of members on the list (see
+  templatevars.txt)
+- Added feature to set where member urls are opened (TARGET value of A tag)
+- Modified spam-protecting of emails to JavaScript protection for default
+  members' list or when using the ordinary $$fan_email$$ template variable,
+  retained mangled email address for use in mailto: links
+- Edited the multiple page browsing feature to start showing numbers starting
+  from "1" and not "0"
+- Added feature that allows for no sorting of members whatsoever
+- Renamed emailvars.txt to templatevars.txt
+- Modified default email templates
+- Mixed minor bug that doesn't hide the sorting field properly if specified
+  so in the config.inc.php file.
+
+29 November 2003
+- Added checking if a given email address is valid when joining (checks for
+  presence of an '@' sign)
+- Added feature to automatically append 'http://' at the front of website
+  urls that don't have it
+- Fixed a bug when sending individual emails that doesn't parse the
+  special email variables
+- Fixed a bug that doesn't change 'All fans' to 'All haters' or 'All members'
+- Fixed a bug that shows email contents when logging into another Enthusiast
+  system when a previous session has not been logged out
+
+04 November 2003
+- Fixed bug that does not remove the slashes in emails to members/owner
+- Dropped single-socket mailing feature (buggy)
+- Edited alter.php to easily repair databases as well, according to
+  config.inc.php settings
+- Added feature that allows members attempting to join who get a database
+  error other than duplicate email to email this error report to the
+  owner for debugging/reporting
+- Added feature that shows the email addresses that the PHP mail() function
+  was not able to send (does not include bounced emails).
+- Added feature that allows admin to create their own templates and use the
+  email variables defined in emailvars.txt in all outgoing emails from
+  Enthusiast
+- Released beta of current features and fix for earlier features
+
+29 October 2003
+- Modified the Email All Members feature to access the mail socket only once
+  for added mailing efficiency; modified feature still in beta testing
+
+17 October 2003
+- Added feature that allows editing the type of fanlisting Enthusiast is used
+  for (i.e., fanlisting, hatelisting, clique, etc)
+- Added the special variables $$listing_type$$ and $$lostpass_url$$ for
+  email templates
+- Fixed bug that prevents member update/edit when there are additional fields
+  and when using MySQL 4.0.x
+
+13 October 2003
+- Added reset password feature (and customizable lost password email).
+- Added member link target customization.
+- Modified member information editing to show the SQL query when errors occur
+  to facilitate bug fixes.
+
+09 Octpber 2003
+- Modified code to make auto-emailing usable with PHP versions lower than 4.3
+
+02 October 2003
+- Added feature to allow admin to easily customize the way additional forms
+  are shown on the join form.
+- Updated the Enthusiast link at the bottom of the join form.
+- Modified readme.txt file
+- Added copyright/disclaimer notes on each file
+- Added fanlisting title and subject on the backend index page and home page.
+
+01 October 2003
+- Added multiple additional field feature.
+- Added email templates feature.
+- Added update/modify fanlisting database table feature.
+- Added feature that shows newest members on last update date.
+- Modified how the last updated date is shown.
+- Modified update information form to show country drop-down field.
+- Fixed bug where administrator can't edit additional fields.
+- Fixed bug that says 'Your email has been successfully changed...' in the
+  update_member.php file.
+- Fixed bug where showing all fans does not show the sort value.
+- Deleted the useless (-_-;) "new" column in the database.
+- Added sample files in the archive.
+
+22 September 2003
+- Fixed minor bug that doesn't strip backslashes when sending emails from
+  the utility.
+- Fixed minor bug that doesn't reflect the correct "showurl" variable when
+  showing member information edit values.
+- Added this changelog file.
+
+20 September 2003
+- Made script available for download.

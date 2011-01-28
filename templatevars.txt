@@ -1,0 +1,82 @@
+
+Enthusiast - Template and Email Variables
+=========================================
+
+This document lists all special variables you can use when customizing the
+signup, approval, and update information emails your fanlisting sends out.
+Where included, items in parentheses are the config.inc.php variables the
+special variable corresponds to.
+
+These variables are case-sensitive. See the included default emails/samples
+as a guide in making your own emails. Unless otherwise specified, these
+variables can only be used for email templates.
+
+
+Fanlisting Site Variables
+-------------------------
+$$owner_name$$         - name of the fanlisting/site owner ($owner_name)
+
+$$fanlisting_title$$   - name of the site ($fanlisting_title)
+
+$$fanlisting_subject$$ - subject of the fanlisting ($fanlisting_subject)
+
+$$fanlisting_email$$   - email address of the owner/fanlisting
+                         ($fanlisting_email)
+
+$$fanlisting_url$$     - url of the site/fanlisting ($fanlisting_url)
+
+$$fanlisting_list$$    - filename of the fans list ($list_url)
+
+$$fanlisting_update$$  - filename of the update page ($update_url)
+
+$$fanlisting_join$$    - filename of the join page ($join_url)
+
+$$fanlisting_lostpass$$- filename of the lost password page ($lostpass_url)
+
+$$listing_type$$       - type of listing ($listing_type)
+
+
+Fan Information Variables
+-------------------------
+$$fan_name$$           - name of the fan attempting to join the fanlisting;
+                         can also be used for list template (list.inc.php)
+
+$$fan_email$$          - email address of the fan attempting to join the
+                         fanlisting; can also be used for list template
+                         (list.inc.php) and, on the members list, includes the
+                         JavaScript-protected mailto link itself, of the form
+                         '<a href="mailto:name@domain.tld">name@domain.com</a>'
+
+$$fan_country$$        - country of the fan attempting to join the
+                         fanlisting; can also be used for list template
+                         (list.inc.php)
+
+$$fan_url$$            - URL of the fan attempting to join the fanlisting;
+                         can also be used for list template (list.inc.php) and,
+                         on the members list, includes the actual link itself
+                         with the link target set to the value of $link_target
+                         set in the config.inc.php file, i.e.:
+                         '<a href="http://domain.tld" target="_blank">domain.
+                         tld</a>'
+
+$$fan_FIELDNAME$$      - additional information given by the fan attempting
+                         to join the fanlisting, where FIELDNAME corresponds
+                         to the field names specified in the array
+                         $additional_field_names in config.inc.php;
+                         can also be used for list template (list.inc.php)
+
+$$fan_password$$       - password provided by the fan attempting to join
+                         the fanlisting
+                         NOTE: This will only work with signup emails, NOT
+                         with approval emails! This is because passwords are
+                         encrypted in the database using one-way encryption
+                         and cannot be decrypted.
+
+$$fan_email_plain$$    - this can only be used for the list template
+                         (list.inc.php), and is useful for creating your own
+                         custom email link; email address is mangled, i.e.:
+                         'name {at} domain.tld'
+
+$$fan_url_plain$$      - this can only be used for the list template
+                         (list.inc.php), and is useful for creating your own
+                         custom website link (includes url itself)

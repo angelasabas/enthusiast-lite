@@ -1,0 +1,212 @@
+
+Enthusiast - Upgrading Instructions
+===================================
+
+Upgrading from 2.1.6 to 2.1.7:
+------------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/admin_affiliates.php
+   - backend/admin_email.php
+   - backend/admin_home.php
+   - backend/admin_login.php
+   - backend/admin_members.php
+   - backend/admin_pending.php
+   - backend/get_last_updated.php
+   - backend/get_members.php
+   - backend/get_newest_members.php
+   - backend/get_pending_count.php
+   - backend/header.inc.php
+   - backend/index.php
+   - backend/reset_password.php
+   - backend/show_fans.php
+   - backend/update_member.php
+
+
+
+Upgrading from 2.1.6 to 2.1.7:
+------------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/get_newest_members.php
+   - backend/reset_password.php
+   - backend/show_category.php
+   - backend/show_fans.php
+   - backend/update_member.php
+
+
+
+Upgrading from 2.1.5 to 2.1.6:
+------------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/admin_pending.php
+   - backend/reset_password.php
+   - backend/show_affiliates.php
+   - backend/show_category.php
+   - backend/show_fans.php
+   - backend/update_member.php
+2. Add a variable to config.inc.php:
+   $backend_dir = 'backend/';
+   Change this variable to the name where your backend is installed (if
+   you're upgrading, this is usually 'backend/' anyway).
+   Do NOT forget the trailing slash!
+3. Add a variable to config.inc.php:
+   $sort_dropdown = true;
+   *IF* you want the sorting of the members page (i.e., via country) changed
+   from the ordinary links to a drop-down menu.
+
+
+
+Upgrading from 2.1.4 to 2.1.5:
+------------------------------
+1. Upload:
+   - backend/action_new.gif
+   - backend/add_member.php
+   - backend/admin_affiliates.php
+   - backend/admin_login.php
+   - backend/admin_pending.php
+   - backend/admin_members.php
+   - backend/get_affiliates.php
+   - backend/header.inc.php
+   - backend/index.php
+   - backend/menu_affiliates.gif
+   - backend/show_affiliates.php
+   - backend/show_fans.php
+   - backend/update_member.php
+2. If you wish to enable affiliates, add the line below to your config.inc.php
+   file:
+   $enable_affiliates = true;
+3. If you wish to disable countries, add the line below to your config.inc.php
+   file:
+   $disable_country = true;
+4. If you did #2 or #3, uploade backend/alter.php and run that file to update
+   your database.
+5. If you wish to have member links (both member list and on the admin panel)
+   open up in a new window (or otherwise customize it), add the line below
+   to your config.inc.php file, which will be placed inside the TARGET
+   attribute of the A tag (by default, it is set to "_top" within the script)
+   $link_target = '_blank';
+6. If you wish to modify/personalize your members list display, add and edit
+   the list.inc.php file (do not use another filename!); refer to
+   templatevars.txt
+
+
+Upgrading from 2.1.3 to 2.1.4:
+------------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/admin_email.php
+   - backend/admin_home.php
+   - backend/admin_login.php
+   - backend/admin_members.php
+   - backend/admin_pending.php
+   - backend/countries.inc.php
+   - backend/index.php
+   - backend/show_category.php
+
+Upgrading from 2.1.2 to 2.1.3:
+------------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/admin_email.php
+   - backend/alter.php
+2. Add your custom email templates to the /backend/emails directory as
+   necessary.
+
+Upgrading from 2.1.1 to 2.1.2:
+------------------------------
+1. Upload:
+   - backend/admin_email.php
+
+
+Upgrading from 2.1.0 to 2.1.1:
+------------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/admin_home.php
+   - backend/admin_email.php
+   - backend/admin_members.php
+   - backend/admin_pending.php
+   - backend/header.inc.php
+   - backend/index.php
+   - backend/parse_email.php
+   - backend/reset_password.php
+   - backend/update_member.php
+2. Update your backend/config.inc.php file to include the variables
+   $listing_type = 'fanlisting';
+   or to whatever type of listing you are using Enthusiast for if otherwise
+   (i.e., 'clique' or 'hatelisting')
+3. Optional: Upload the new email templates in the backend/email/ folder
+   or customize if you want to use the new $$lostpass_url$$ and
+   $$listing_type$$ special email variables.
+
+
+Upgrading from 2.0.2 to 2.1.0:
+------------------------------
+1. Upload:
+   - backend/admin_pending.php
+   - backend/admin_members.php
+   - backend/reset_password.php
+   - backend/show_fans.php
+   - backend/update_member.php
+2. Update your backend/config.inc.php file to include the variables
+   $link_target = '_blank';
+   $lostpass_url = 'lostpass.php'
+   Customize the values however you want; leave blank for same-window loading for
+   the former, and change to the path to your lost password page.
+3. Upload (and customize) the backend/emails/lostpass.txt file.
+   (See emailvars.txt to see special variables)
+
+
+Upgrading from 2.0.1 to 2.0.2:
+------------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/admin_pending.php
+   - backend/update_member.php
+
+
+Upgrading from 2.0 to 2.0.1:
+----------------------------
+1. Upload:
+   - backend/add_member.php
+   - backend/admin_home.php
+   - backend/index.php
+2. Upload a customized addform.inc.php into your base directly *IF* you want
+   to customize the way your addional fields are displayed (by default,
+   they are displayed as text boxes). See install.txt for more information.
+
+
+Upgrading from 1.0 to 2.0:
+--------------------------
+1. Update your config.inc.php file to the one included in this archive. Take
+   note of the variable changes listed below:
+      - $show_sort_field = false;
+        This is a new variable, default is set to false.
+      - $additional_field_names = array();
+        Do NOT change this variable!
+      - $additional_field_names[] = 'fieldname';
+        This variable replaced $additional_field_name in 1.0; change
+        "fieldname" to your (old) fieldname; add as many of these as you need
+        for multiple additional fields.
+      - $additional_field_show = true;
+        This variable was *deleted*.
+2. Create a /email folder in your /backend directory.
+3. Upload all filed into your /backend(/email) folder and overwrite any old
+   files; the files listed below are important:
+       - emails/approval.txt
+       - emails/signup.txt
+       - emails/update.txt
+       - add_member.php
+       - admin_login.php
+       - admin_members.php
+       - admin_pending.php
+       - alter.php
+       - config.inc.php
+       - get_last_updated.php
+       - get_newest_members.php
+       - parse_email.php
+       - show_fans.php
+       - update_member.php
+4. Run YOUR_SITE/backend/alter.php to update your database table.

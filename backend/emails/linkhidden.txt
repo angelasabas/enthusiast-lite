@@ -1,0 +1,12 @@
+Hello $$fan_name$$,
+
+You received this email because you, or someone else using your email address, recently signed up for the $$fanlisting_subject$$ $$listing_type$$. If this is in error, please contact me immediately.
+
+I have added you to the members' list but have not yet listed your website as I could not find the link back to the $$listing_type$$. If this is in error (you already have it up) or when you have linked to the fanlisting already, please tell me about it, as well as the URL to the page where you have the link up so that I can edit your information and list your website.
+
+Thank you for joining.
+
+Sincerely,
+$$owner_name$$
+$$fanlisting_title$$ Owner
+$$fanlisting_url$$

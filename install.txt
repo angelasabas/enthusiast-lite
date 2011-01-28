@@ -1,0 +1,254 @@
+
+Enthusiast - Installation Instructions
+======================================
+
+1. Unzip enthusiast.zip; it should create a directory named "backend".
+
+2. Modify the backend/config.sample.inc.php file (see file for details)
+   and save this file as config.inc.php.
+
+   Optional: modify the signup/approval/update email templates found in
+   the backend/email/ directory. See templatevars.txt for list of
+   special email template variables you can use. You can also add your own
+   custom email templates for use when mass-emailing members from
+   backend/admin_email.php as TEMPLATENAME.txt files.
+
+3. Create a directory named "backend" on your fanlisting's directory, e.g.,
+   if your fanlisting is at http://fan.domain.com/myfanlisting, you should
+   create http://fan.domain.com/myfanlisting/backend
+
+4. Upload everything into /backend (including folders under it).
+
+5. Go to /backend/install.php and follow instructions.
+
+6. Delete install.php
+
+7. If you want to enable affiliates, add /affiliates to your root directory
+   (the same level as /backend), and, if needed, CHMOD the directory to 777.
+
+8. Customize/include the necessary PHP files into your FL site (see below).
+
+
+
+How to customize your additional fields for the join form
+=========================================================
+You can setup how your additional fields are shown on your join form by
+creating a file called 'addform.inc.php' on your base directory (NOT in
+/backend) and writing your additional fields there (see included file
+for an illustration on how to go about it; feel free to modify/delete it if
+you wish).
+
+Important notes:
+. Make sure your input tag names (the NAME attribute of
+  input/textarea/select tags) are named as your database column is named,
+  which can be seen at backend/config.inc.php (these are the values of
+  the $additional_field_names[] variable).
+. If you want to customize one field, you have to customize ALL of them. For
+  example, you want to make only one of the additional fields into a select
+  tag (a drop-down field); you not only have to include that in your
+  form, but you will have to create input tags for all.
+. Especially if your web server does not hide PHP errors when parsing
+  PHP, or if you're just as nitpicky as I am, when using radio fields
+  (i.e., <input type="radio" ...), you have to automatically select at least
+  one (i.e., <input type="radio" checked="checked"... ).
+. These additional forms only allow up to 255 characters, SPACES INCLUDED. So
+  be sure to limit characters if you're using a textarea.
+
+
+
+How to customize your members' list display
+===========================================
+You can edit how members' information are displayed on your listing by creating
+a file called 'list.inc.php' on your base directory (NOT in /backend) and
+writing your template there (see included file for an illustration on how to
+go about it; feel free to modify/delete it if you wish, and modifying it (or
+altogether deleteing it) is actually highly recommended as by default it
+only serves to illustrate the different variables you can use).
+
+Also, if you wish to use tables or list tags such as UL, OL, or DL, you can add
+a 'listheader.inc.php' and 'listfooter.inc.php' file where you can add your
+opening table/list tag (<table>, <ul>, <ol>, <dl>) and your closing table/list
+tag (</table>, </ul>, </ol>, </dl>).
+
+Some tips:
+. $$fan_email_plain$$ is useful if you wish to not show the full email address
+  on your members list, as $$fan_email$$ will do. The only advantage of
+  $$fan_email$$ is because it's JavaScript-protected, people can still
+  click on the email link and not need to edit the mangled email address.
+  However, if this goes against your tastes, you can opt to use
+  $$fan_email_plain$$ instead of $$fan_email$$, such as:
+     <a href="mailto:$$fan_email_plain$$">@</a>
+     Output (what can be seen on browser by visitor): @
+     Output (what can be seen on status bar): mailto:user {at} domain.tld
+  As opposed to:
+     $$fan_email$$
+     Output (what can be seen on browser by visitor): user@domain.tld
+     Output (what can be seen on status bar): mailto:user@domain.tld
+. $$fan_url_plain$$ is useful in the same way $$fan_email_plain$$ is; if
+  you want to customize how links are shown. This is especially useful if you
+  have a number of people joining with long URLs and your content space for
+  the members' list is small:
+     Member URL in database:
+        http://www767.someverylongurl.com.uh/blah/blahagain/splashpage.htm
+     Output of '$$fan_url$$' (what can be seen on the browser):
+        www767.someverylongurl.com.uh/blah/blahagain/splashpage.htm
+     Output of '<a href="$$fan_url_plain$$">web</a>' (what can be seen):
+        web
+  The only advantage of $$fan_url$$ is that it naturally incorporates your
+  $link_target setting, though this is by no means a major advantage.
+
+
+
+How to include the scripts in your site
+=======================================
+To see examples of how you can set up the scripts, see the accompanying
+files:
+ . index.php
+ . join.php
+ . list.php
+ . update.php
+ . lostpass.php
+ . affiliates.php
+
+Note: You MUST use ".php" as the extension for all the files you will be
+including/putting these scripts in.
+
+These are copy-paste scripts, feel free to modify if you like. ;)
+
+------------
+Last Updated
+------------
+
+Code:
+   --------------------------------------------------------------
+   Last Updated: <?php include 'backend/get_last_updated.php'; ?>
+   --------------------------------------------------------------
+
+Output:
+   ------------------------------
+   Last updated: October 01, 2003
+   ------------------------------
+
+------------
+Member Count
+------------
+
+Code:
+   --------------------------------------------------------------
+   Member count: <?php include 'backend/get_member_count.php'; ?>
+   --------------------------------------------------------------
+
+Output:
+   ----------------
+   Member count: 71
+   ----------------
+
+--------------------
+Pending Member Count
+--------------------
+
+Code:
+   ------------------------------------------------------------------
+   Pending members: <?php include 'backend/get_pending_count.php'; ?>
+   ------------------------------------------------------------------
+
+Output:
+   ------------------
+   Pending members: 5
+   ------------------
+
+--------------
+Newest members
+--------------
+
+Code:
+   ------------------------------------------------------------------
+   Newest members: <?php include 'backend/get_newest_members.php'; ?>
+   ------------------------------------------------------------------
+
+Output:
+   -----------------------------------
+   Newest members: Mary John Sue Dolly
+   -----------------------------------
+   Note: Where applicable, those names are also links to the person's website
+
+---------
+Join Form
+---------
+
+Code:
+   ------------------------------------------
+   <?php include 'backend/add_member.php'; ?>
+   ------------------------------------------
+
+Output:
+  The whole join form. Customizable using CSS
+
+
+---------
+Fans List
+---------
+
+Code:
+   ------------------------------------------
+   <?php include 'backend/show_category.php';
+   include 'backend/show_fans.php'; ?>
+   ------------------------------------------
+
+Output:
+  The (whole) members list. Semi-customizable using CSS
+
+-----------
+Update form
+-----------
+
+Code:
+   ---------------------------------------------
+   <?php include 'backend/update_member.php'; ?>
+   ---------------------------------------------
+
+Output:
+  The whole update form. Customizable using CSS
+
+------------------
+Lost password form
+------------------
+
+Code:
+   ---------------------------------------------
+   <?php include 'backend/reset_password.php'; ?>
+   ---------------------------------------------
+
+Output:
+  The whole lost password form. Customizable using CSS
+
+---------------
+Affiliates list
+---------------
+
+Code:
+   ---------------------------------------------
+   <?php
+   include 'backend/show_affiliates.php';
+   ?>
+   ---------------------------------------------
+
+Output:
+  The affiliates list. Customizable using CSS
+
+-------------------------------------
+Affiliates list (with custom spacers)
+-------------------------------------
+
+Code:
+   ---------------------------------------------
+   <?php
+   $spacer = '<br />' // set this variable to the spacer you want
+   include 'backend/show_affiliates.php';
+   ?>
+   ---------------------------------------------
+
+Output:
+  The affiliates list, with a custom spacer (<br /> in this case).
+  Customizable using CSS. Text links are by by default spaced apart by <br />,
+  image links are shown in a line
